@@ -1,0 +1,40 @@
+# Payload Information
+
+## File Details
+- **Name:** payload.exe (payload1.exe in some tests)
+- **Size:** 15,889,408 bytes (15.8 MB)
+- **Type:** Windows x64 executable
+- **C2 Protocol:** mTLS (Mutual TLS)
+- **C2 Server:** 192.168.56.102:8888
+
+## Implant Configuration
+- **OS:** Windows
+- **Architecture:** amd64
+- **Format:** Native EXE
+- **Obfuscation:** Enabled (default Sliver)
+- **Reconnect Interval:** 60 seconds
+
+## C2 Communication Details
+- **Listener Type:** mTLS
+- **Port:** 8888
+- **Encryption:** TLS 1.3
+- **Authentication:** Mutual TLS certificates
+
+## Behavioral Indicators
+- Beacons to port 8888 every 60 seconds
+- Multiple processes with random names
+- Registry read attempts (SAM/SYSTEM)
+- Command execution via shell
+
+## File Hashes (for detection research)
+```bash
+# To generate hashes (run on Kali)
+md5sum payload.exe
+sha256sum payload.exe
+```
+Detection Status
+Windows Defender: Caught initially (real-time protection OFF bypassed)
+
+Network Detection: Encrypted, but unusual port
+
+Static AV: May be detected by some vendors
