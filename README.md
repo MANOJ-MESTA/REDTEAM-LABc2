@@ -33,3 +33,4 @@ SYSTEM access enables complete host compromise
 Multiple sessions create noise - always clean up
 Project Complete
 This lab demonstrates full C2 lifecycle: deployment → beacon → privilege escalation → post-exploitation
+This lab demonstrates full C2 lifecycle: deployment → beacon → privilege escalation → post-exploitation
